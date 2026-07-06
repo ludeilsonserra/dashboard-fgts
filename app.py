@@ -1816,7 +1816,7 @@ def render_drilldown_empresa(base_df: pd.DataFrame, empresa_codigo: int, compete
     kpi = {
         "colaboradores": qtd_colaboradores,
         "base_total": base_fgts_total,
-        "fgts_mensal_total": d["base_fgts_13"].sum(),
+        "fgts_mensal_total": d["valor_fgts_mensal"].sum(),
         "fgts_13_total": d["valor_fgts_13"].sum(),
         "consolidado": d["valor_fgts_consolidado"].sum(),
         "media_base": (base_fgts_total / qtd_colaboradores) if qtd_colaboradores else 0,
