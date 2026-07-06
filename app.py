@@ -459,6 +459,41 @@ div[data-testid="stFileUploaderFile"] button:hover{
     border:1px solid #ff6b6b !important;
 }
 
+/* Arquivo já carregado: força nome e tamanho em branco em todas as versões do Streamlit */
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] *{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+}
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] svg,
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] svg *,
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] path{
+    color:#ffffff !important;
+    fill:#ffffff !important;
+    stroke:#ffffff !important;
+}
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] button,
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"] button *{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+}
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"],
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] div,
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] span,
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] small,
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] p,
+div[data-testid="stFileUploader"] [data-testid="stFileUploaderFile"] label{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+    opacity:1 !important;
+}
+div[data-testid="stFileUploader"] [title$=".xlsx"],
+div[data-testid="stFileUploader"] [title$=".xlsm"],
+div[data-testid="stFileUploader"] [title$=".xls"]{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+    opacity:1 !important;
+}
+
 div[data-testid="stButton"] button[kind="primary"]{
     background:#f28c28 !important;
     color:#ffffff !important;
