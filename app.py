@@ -2105,9 +2105,9 @@ if empresa_sel != "Todos":
 base_fgts_total_card = (
     base_kpi_empresa["base_fgts_mensal"].sum() + base_kpi_empresa["base_fgts_13"].sum()
 ) if not base_kpi_empresa.empty else 0
-base_fgts_13_card = base_kpi_empresa["base_fgts_13"].sum() if not base_kpi_empresa.empty else 0
+fgts_mensal_total_card = base_kpi_empresa["valor_fgts_mensal"].sum() if not base_kpi_empresa.empty else 0
 base_fgts_total_foot = ("Empresa selecionada" if empresa_sel != "Todos" else "Todas as empresas") + " | Mensal + 13º"
-base_fgts_13_foot = ("Empresa selecionada" if empresa_sel != "Todos" else "Todas as empresas") + " | Fgts Mensal"
+fgts_mensal_total_foot = ("Empresa selecionada" if empresa_sel != "Todos" else "Todas as empresas") + " | Fgts Mensal"
 
 totals = {
     "empresas": base["empresa_codigo"].nunique(),
@@ -2189,7 +2189,7 @@ st.markdown(f"""
 kpis = [
     ("BASE FGTS TOTAL", br_money(base_fgts_total_card), base_fgts_total_foot, "kpi-blue"),
     ("FGTS TOTAL CONSOLIDADO", br_money(totals["valor_fgts_consolidado"]), "Mensal + 13º", "kpi-green"),
-    ("FGTS MENSAL TOTAL", br_money(base_fgts_13_card), base_fgts_13_foot, "kpi-orange"),
+    ("FGTS MENSAL TOTAL", br_money(fgts_mensal_total_card), fgts_mensal_total_foot, "kpi-orange"),
     ("FGTS 13º TOTAL", br_money(totals["valor_fgts_13"]), ("Empresa selecionada" if empresa_sel != "Todos" else "Todas as empresas") + " | Fgts 13º", "kpi-purple"),
     ("MÉDIA BASE FGTS / COLAB.", br_money(totals["media_base"]), "Base média mensal", "kpi-blue"),
     ("MÉDIA FGTS / COLAB.", br_money(totals["media_fgts"]), "Média consolidada", "kpi-cyan"),
